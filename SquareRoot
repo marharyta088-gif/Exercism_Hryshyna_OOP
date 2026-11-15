@@ -1,0 +1,22 @@
+public static class SquareRoot
+{
+    public static int Root(int number)
+    {
+        if (number == 0 || number == 1)
+        {
+            return number;
+        }
+        
+        long guess = number / 2;
+        
+        long previousGuess = 0;
+        
+        while (guess != previousGuess)
+        {
+            previousGuess = guess;
+            guess = (guess + number / guess) / 2;
+        }
+        
+        return (int)guess;
+    }
+}
